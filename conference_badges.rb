@@ -15,3 +15,5 @@ describe 'conference_badges' do
                   "Hello, my name is Grace.",
                   "Hello, my name is Linus.",
                   "Hello, my name is Matz."
+                  
+                end
