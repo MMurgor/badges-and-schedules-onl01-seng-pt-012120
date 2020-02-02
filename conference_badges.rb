@@ -24,14 +24,6 @@ describe 'conference_badges' do
                             "Hello, Matz! You'll be assigned to room 7!"
                          ]}
 
-# This funny looking <<-TEXT thing is called heredoc. It's a multi-line string
-# delimiter that makes it really easy for us to write multi-line strings in the
-# middle of code. The TEXT part is arbitrary too.
-# It could easily have been <<-BLAHBLAH. The only requirement is that you use
-# the same word to end the multi-line string.
-
-# For more info about heredocs, see this link:
-# http://en.wikibooks.org/wiki/Ruby_Programming/Here_documents
 
   let(:badges_and_room_assignments) {<<-TEXT
 Hello, my name is Edsger.
@@ -89,17 +81,10 @@ TEXT
 
   describe '#printer' do
 
-    # Question 4
-    # The method `printer` should output first the results of the batch_badge_creator method and then of the assign_rooms method to the screen - this way you can output
-    # the badges and room assignments one at a time.
-    # To make this test pass, make sure you are iterating through your badges and room assignments lists.
+  
 
     it 'should puts the list of badges and room_assignments' do
-      badges_and_room_assignments.each_line do |line|
-        # $stdout is a Ruby global varibale that represents the current standard output.
-        # In this case, the standard output is your terminal screen. This test, then,
-        # is checking to see whether or not your terminal screen receives the correct
-        # printed output.
+      
         expect($stdout).to receive(:puts).with(line.chomp)
       end
       printer(attendees)
